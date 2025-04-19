@@ -1,12 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Dto;
+using Microsoft.EntityFrameworkCore;
 
-namespace DataQuiz.Context
-{
+namespace DataQuiz.Context;
+
     public class ApplicationDbContext : DbContext
     {
         private readonly string _connectionString;
@@ -15,5 +11,6 @@ namespace DataQuiz.Context
         {
             this._connectionString = connectionString;
         }
+        public DbSet<Categoria> Categorias { get; set; }
     }
-}
+        
