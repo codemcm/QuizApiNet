@@ -11,6 +11,10 @@ namespace DataQuiz.Context;
         {
             this._connectionString = connectionString;
         }
-        public DbSet<Categoria> Categorias { get; set; }
+        public DbSet<Categoria> Categoria { get; set; }
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    {
+        optionsBuilder.UseSqlServer(_connectionString);
     }
+}
         

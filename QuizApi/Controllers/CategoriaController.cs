@@ -14,6 +14,7 @@ namespace QuizApi.Controllers
             // Fix for CS8601: Use null-coalescing operator to provide a fallback value
             StringConnection = config.GetConnectionString("dbCon") ?? throw new ArgumentNullException(nameof(config), "Connection string 'dbCon' is not configured.");
         }
+        [HttpGet]
         public async Task<IActionResult> ListCategoria()
         {
             CategoriaLogic catLogic = new CategoriaLogic(StringConnection);

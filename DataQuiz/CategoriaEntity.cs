@@ -14,19 +14,19 @@ namespace DataQuiz
         }
         public async Task<List<Categoria>> GetAllCategoriasAsync()
         {
-            return await _context.Categorias.ToListAsync();
+            return await _context.Categoria.ToListAsync();
         }
 
         public async Task<Categoria> AddNew(Categoria categoria)
         {
-            var categoriaNew = _context.Categorias.Add(categoria);
+            var categoriaNew = _context.Categoria.Add(categoria);
             await _context.SaveChangesAsync();
             return categoriaNew.Entity;
         }
 
         public async Task<Categoria> Update(Categoria categoria)
         {
-            var categoriaUpdate = _context.Categorias.Update(categoria);
+            var categoriaUpdate = _context.Categoria.Update(categoria);
             await _context.SaveChangesAsync();
             return categoriaUpdate.Entity;
         }
